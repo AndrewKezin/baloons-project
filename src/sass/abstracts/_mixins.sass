@@ -1,0 +1,20 @@
+/* Стили ссылок */
+@mixin style-link($color)
+    display: inline-block
+    text-transform: uppercase
+    text-decoration: none
+    color: $color
+
+/* clearfix для float */
+@mixin clearfix
+    &::after
+        content: ""
+        display: table
+        clear: both
+
+@mixin col($quantity, $columns)
+    &:not(:last-child)
+        margin-right: $gutter-gorizontal
+    /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+    width: calc(#{$quantity} * ((100% - (#{$columns} - 1) * #{$gutter-gorizontal}) / #{$columns}) + (#{$quantity} - 1) * #{$gutter-gorizontal})
+    float: left

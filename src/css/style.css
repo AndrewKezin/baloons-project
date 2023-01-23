@@ -1,0 +1,355 @@
+@charset "UTF-8";
+/* Цвет текста */
+/* основные цвета сайта */
+/* черный и белый цвета сайта */
+/* тень для кнопок */
+/* тень для заголовка */
+/* вертикальный отступ большой */
+/* ширина сетки */
+/* отступ между колонками */
+/* Стили ссылок */
+/* clearfix для float */
+/* Анимация перемещения слева направо */
+@-webkit-keyframes LeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes LeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Анимация перемещения сверху вниз */
+@-webkit-keyframes upToDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  80% {
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes upToDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  80% {
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Анимация перемещения снизу вверх */
+@-webkit-keyframes downToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes downToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Анимация для кнопки (перемещение вверх) */
+@-webkit-keyframes btnToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes btnToUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #777777;
+  padding: 5rem;
+  background: #FFFFFF;
+}
+
+.container {
+  background-color: #f7f7f7;
+}
+
+body {
+  font-family: roboto;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+}
+
+.title-first {
+  color: #FFFFFF;
+  font-family: "Roboto";
+}
+.title-first__main {
+  display: block;
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 6rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  -webkit-animation-name: upToDown;
+          animation-name: upToDown;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 1;
+          animation-delay: 1;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.title-first__secondary {
+  display: block;
+  font-weight: 100;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: 0.5rem;
+  -webkit-animation-name: downToUp;
+          animation-name: downToUp;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 1;
+          animation-delay: 1;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  margin-bottom: 5rem;
+}
+
+.title-secondary {
+  text-align: center;
+  display: inline-block;
+  font-size: 3.6rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.5s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.title-secondary:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+
+/* выравнивание текста в обертке */
+.text-align-center {
+  text-align: center;
+}
+
+/* отступ 80px */
+.margin-bottom-80px {
+  margin-bottom: 8rem;
+}
+
+.btn:link, .btn:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #777777;
+  letter-spacing: 0.5rem;
+  font-size: 2rem;
+  padding: 1.5rem 4rem;
+  background: white;
+  border-radius: 5rem;
+  transition: all 0.3s;
+  position: relative;
+}
+.btn:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+.btn:hover::after {
+  opacity: 0;
+  transform: scaleX(1.5) scaleY(1.7);
+}
+.btn:active {
+  transform: translateY(-0.2rem);
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+.btn::after {
+  content: "";
+  background: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 1s;
+}
+.btn_animated {
+  -webkit-animation: btnToUp 0.5s ease-out 0.7s;
+          animation: btnToUp 0.5s ease-out 0.7s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.row {
+  min-width: 114rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-1-of-2 {
+  /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+  width: calc(1 * ((100% - (2 - 1) * 6rem) / 2) + (1 - 1) * 6rem);
+  float: left;
+}
+.col-1-of-2:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.col-1-of-3 {
+  /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+  width: calc(1 * ((100% - (3 - 1) * 6rem) / 3) + (1 - 1) * 6rem);
+  float: left;
+}
+.col-1-of-3:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.col-2-of-3 {
+  /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+  width: calc(2 * ((100% - (3 - 1) * 6rem) / 3) + (2 - 1) * 6rem);
+  float: left;
+}
+.col-2-of-3:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.col-1-of-4 { /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+  width: calc(1 * ((100% - (4 - 1) * 6rem) / 4) + (1 - 1) * 6rem);
+  float: left;
+}
+.col-1-of-4:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.col-2-of-4 {
+  /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+  width: calc(2 * ((100% - (4 - 1) * 6rem) / 4) + (2 - 1) * 6rem);
+  float: left;
+}
+.col-2-of-4:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.col-3-of-4 {
+  /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+  width: calc(3 * ((100% - (4 - 1) * 6rem) / 4) + (3 - 1) * 6rem);
+  float: left;
+}
+.col-3-of-4:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url(../img/header-background.jpg) center/cover no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  /* clip-path: polygon(0 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%) */
+}
+.header__logo {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  width: 5.6rem;
+  height: 7rem;
+  -webkit-animation-name: downToUp;
+          animation-name: downToUp;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 1;
+          animation-delay: 1;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.header__box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+.section-about {
+  padding-top: 8rem;
+}/*# sourceMappingURL=style.css.map */
