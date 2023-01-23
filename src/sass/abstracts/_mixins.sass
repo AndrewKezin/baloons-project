@@ -12,9 +12,11 @@
         display: table
         clear: both
 
+/* Grid */
 @mixin col($quantity, $columns)
     &:not(:last-child)
         margin-right: $gutter-gorizontal
     /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
     width: calc(#{$quantity} * ((100% - (#{$columns} - 1) * #{$gutter-gorizontal}) / #{$columns}) + (#{$quantity} - 1) * #{$gutter-gorizontal})
     float: left
+    

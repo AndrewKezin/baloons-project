@@ -7,8 +7,10 @@
 /* вертикальный отступ большой */
 /* ширина сетки */
 /* отступ между колонками */
+/* размер текста */
 /* Стили ссылок */
 /* clearfix для float */
+/* Grid */
 /* Анимация перемещения слева направо */
 @-webkit-keyframes LeftToRight {
   0% {
@@ -197,12 +199,38 @@ body {
   text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
 
+.title-third {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  line-height: 140%;
+  font-weight: 400;
+}
+
 /* выравнивание текста в обертке */
 .text-align-center {
   text-align: center;
 }
 
-/* отступ 80px */
+/* отступы */
+.margin-bottom-10px {
+  margin-bottom: 1rem;
+}
+
+.margin-bottom-30px {
+  margin-bottom: 3rem;
+}
+
+.margin-bottom-50px {
+  margin-bottom: 5rem;
+}
+
 .margin-bottom-80px {
   margin-bottom: 8rem;
 }
@@ -252,6 +280,62 @@ body {
           animation-fill-mode: backwards;
 }
 
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  color: #BA8554;
+  text-decoration: none;
+  padding: 1rem;
+  border-bottom: 1px solid #BA8554;
+  display: inline-block;
+  transition: all 0.5s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.btn-text:hover {
+  background-color: #BA8554;
+  color: #FFFFFF;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.2rem);
+}
+.btn-text:active {
+  transform: translateY(0);
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s;
+  outline-offset: 1rem;
+}
+.composition__photo_n1 {
+  top: 0;
+  left: 0;
+}
+.composition__photo_n2 {
+  top: 2rem;
+  right: 0;
+}
+.composition__photo_n3 {
+  top: 13rem;
+  left: 10rem;
+}
+.composition__photo:hover {
+  outline: 1rem solid #BA8554;
+  transform: scale(1.1);
+  z-index: 20;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+
 .row {
   min-width: 114rem;
   margin: 0 auto;
@@ -292,7 +376,8 @@ body {
   margin-right: 6rem;
 }
 
-.col-1-of-4 { /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
+.col-1-of-4 {
+  /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
   width: calc(1 * ((100% - (4 - 1) * 6rem) / 4) + (1 - 1) * 6rem);
   float: left;
 }
