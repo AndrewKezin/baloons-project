@@ -192,6 +192,14 @@
             </section>
             <!-- Section feedback -->
             <section class="section-feedBack">
+                <!-- Градиент для видео -->
+                <div class="bg-gradient"></div>
+                <!-- Фоновое видео: автовоспроизведение, без звука, цикличность -->
+                <video class="bg-video" autoplay muted loop>
+                    <!-- Далее браузер сам определит, какой формат видео сможет загрузить -->
+                    <source src="img/video-background.mp4">
+                    <source src="img/video-background.webm">
+                </video>
                 <div class="text-align-center margin-bottom-80px">
                     <h2 class="title-secondary title-secondary_white">
                         отзывы наших клиентов
@@ -201,6 +209,7 @@
                     <div class="feedBack-card">
                         <figure class="feedBack-card__img">
                             <img src="img/feedback-1.jpg" alt="persone">
+                            <figcaption class="feedBack-card__name">АНТОН РЯБИН</figcaption>
                         </figure>
                         <div class="feedBack-card__box">
                             <h3 class="title-third margin-bottom-10px">Я ПОЛУЧИЛ МАССУ ВПЕЧАТЛЕНИЙ</h3>
@@ -208,8 +217,81 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="feedBack-card">
+                        <figure class="feedBack-card__img">
+                            <img src="img/feedback-2.jpg" alt="persone">
+                            <figcaption class="feedBack-card__name">ЛИЗА ФРОЛОВА</figcaption>
+                        </figure>
+                        <div class="feedBack-card__box">
+                            <h3 class="title-third margin-bottom-10px">ЭТО БЫЛО ВЕЛИКОЛЕПНО И НЕЗАБЫВАЕМО</h3>
+                            <p class="paragraph">Задача организации, в особенности же дальнейшее развитие различных форм деятельности влечет за собой процесс внедрениям и модернизации соответствующий условий активизации.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-align-center">
+                    <a href="#" class="btn btn_animated">забронировать</a>
+                </div>
+            </section>
+            <!-- Section-book -->
+            <section class="section-book">
+                <div class="row">
+                    <div class="book">
+                        <div class="book_form">
+                            <form action="#" class="form">
+                                <div class="text-align-center margin-bottom-30px">
+                                    <h2 class="title-secondary">
+                                        забронировать тур
+                                    </h2>
+                                </div>
+                                <div class="form__group">
+                                    <input type="text" class="form__input" placeholder="Имя Фамилия" id="name" required>
+                                    <label for="name" class="form__label">Имя Фамилия</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="text" class="form__input" placeholder="Ваш email" id="email" required>
+                                    <label for="email" class="form__label">Ваш email</label>
+                                </div>
+                                <div class="form__group">
+                                    <div class="form__group-radio">
+                                        <input type="radio" class="form__input-radio" id="tour-1" name="checked">
+                                        <label for="tour-1" class="form__label-radio">
+                                            <span class="form__button-radio"></span>
+                                            Групповой тур</label>    
+                                    </div>
+                                    <div class="form__group-radio">
+                                        <input type="radio" class="form__input-radio" id="tour-2" name="checked">
+                                        <label for="tour-2" class="form__label-radio">
+                                            <span class="form__button-radio"></span>
+                                            Индивидуальный тур</label>    
+                                    </div>
+                                </div>
+                                <div class="form__group">
+                                    <button class="btn btn_brown">ЗАБРОНИРОВАТЬ</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
+        <!-- footer -->
+        <footer class="footer">
+            <div class="row text-align-center">
+                <a href="#">
+                    <img src="icons/logo.svg" alt="logo" class="footer__logo">
+                </a>
+            </div>
+            <div class="row">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">О нас</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Скидки</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Лучшие туры</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Калькулятор цены</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Связаться с нами</a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
 
 
@@ -218,7 +300,7 @@
 
 
 
-
+<!-- Grid -->
     <!-- <section class="grid-test">
 
         <div class="row">

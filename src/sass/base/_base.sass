@@ -14,3 +14,6 @@ body
 .container
     background-color: #f7f7f7
     width: 114rem
+    position: relative
+    /* z-index подобран экспериментальным путем, иначе не работает анимация. По идее, он должен быть -3, чтобы не перекрывать видео и градиент для видео */
+    z-index: 0

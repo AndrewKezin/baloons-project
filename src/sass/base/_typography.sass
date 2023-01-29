@@ -3,7 +3,7 @@ body
     font-weight: 400
     font-size: $font-size-paragraph
     letter-spacing: .2rem
-    
+
 .title-first
     color: $color-white
     font-family: "Roboto"
@@ -61,3 +61,24 @@ body
     letter-spacing: .2rem
     line-height: 140%
     font-weight: 400
+
+/* Заголовок h2-move */
+.title-secondary-move
+    text-align: center
+    display: inline-block
+    font-size: $font-size-paragraph-h2
+    letter-spacing: 1rem
+    text-transform: uppercase
+    font-weight: 800
+    background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
+    -webkit-background-clip: text
+    color: transparent
+    transition: all .5s
+    backface-visibility: hidden
+    animation-name: headerMove
+    animation-duration: 1.5s
+    animation-delay: 1
+    animation-timing-function: ease
+    &:hover
+        letter-spacing: 1.5rem
+        text-shadow: $shadow-h2

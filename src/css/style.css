@@ -113,6 +113,27 @@
     transform: translateY(0);
   }
 }
+/* Анимация для заголовка h2-move */
+@-webkit-keyframes headerMove {
+  0% {
+    opacity: 0;
+    letter-spacing: 2rem;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 1rem;
+  }
+}
+@keyframes headerMove {
+  0% {
+    opacity: 0;
+    letter-spacing: 2rem;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 1rem;
+  }
+}
 *, ::after, ::before {
   margin: 0;
   padding: 0;
@@ -132,6 +153,9 @@ body {
 .container {
   background-color: #f7f7f7;
   width: 114rem;
+  position: relative;
+  /* z-index подобран экспериментальным путем, иначе не работает анимация. По идее, он должен быть -3, чтобы не перекрывать видео и градиент для видео */
+  z-index: 0;
 }
 
 body {
@@ -217,6 +241,34 @@ body {
   font-weight: 400;
 }
 
+/* Заголовок h2-move */
+.title-secondary-move {
+  text-align: center;
+  display: inline-block;
+  font-size: 3.6rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.5s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-animation-name: headerMove;
+          animation-name: headerMove;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 1;
+          animation-delay: 1;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+.title-secondary-move:hover {
+  letter-spacing: 1.5rem;
+  text-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+
 /* выравнивание текста в обертке */
 .text-align-center {
   text-align: center;
@@ -239,7 +291,10 @@ body {
   margin-bottom: 8rem;
 }
 
-.btn:link, .btn:visited {
+.btn {
+  /* по селектору & свойства будут применяться к классу btn в любых тегах, а по псевдоклассам :link и :visited - к тегу a*/
+}
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -247,10 +302,11 @@ body {
   letter-spacing: 0.5rem;
   font-size: 2rem;
   padding: 1.5rem 4rem;
-  background: white;
+  background: #FFFFFF;
   border-radius: 5rem;
   transition: all 0.3s;
   position: relative;
+  border: none;
 }
 .btn:hover {
   transform: translateY(-0.4rem);
@@ -266,7 +322,7 @@ body {
 }
 .btn::after {
   content: "";
-  background: white;
+  background: #FFFFFF;
   width: 100%;
   height: 100%;
   border-radius: 5rem;
@@ -282,6 +338,14 @@ body {
           animation: btnToUp 0.5s ease-out 0.7s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
+}
+
+.btn_brown, .btn_brown:link, .btn_brown:visited {
+  background: #BA8554;
+  color: #FFFFFF;
+}
+.btn_brown::after {
+  background: #BA8554;
 }
 
 .btn-text:link, .btn-text:visited {
@@ -468,7 +532,7 @@ body {
 }
 
 .feedBack-card {
-  width: 75%;
+  width: 85%;
   background: rgba(255, 255, 255, 0.75);
   box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
   margin: 0 auto;
@@ -481,7 +545,6 @@ body {
 .feedBack-card__img {
   width: 15rem;
   height: 15rem;
-  background: green;
   float: left;
   border-radius: 100rem;
   /* обтекание текста (настроено с clip-path)*/
@@ -489,13 +552,165 @@ body {
   -webkit-shape-outside: circle(50% at 50% 50%);
   margin-right: 4rem;
   overflow: hidden;
+  position: relative;
 }
 .feedBack-card__img img {
   height: 100%;
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+.feedBack-card__name {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.feedBack-card:hover .feedBack-card__name {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.feedBack-card:hover img {
+  transform: scale(1);
+  filter: blur(0.3rem) brightness(70%);
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  /* object-fit подстраивает размер изображения под контейнер сохраняя пропорции */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.book {
+  height: 50rem;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 57%, rgba(186, 133, 84, 0.8) 57.1%, rgba(161, 79, 3, 0.9) 100%), url(../img/bg-form.jpg) center/cover no-repeat;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.form {
+  width: 65%;
+  padding-top: 5rem;
+  padding-left: 5rem;
+  /* Внутренняя точка появится когда radiobutton будет выбран */
+}
+.form__group:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.form__group:nth-child(4) {
+  margin-bottom: 4rem;
+}
+.form__input {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #000000;
+  padding: 1.5rem 0rem 1.5rem 2rem;
+  background: #FFFFFF;
+  border: none;
+  border-bottom: 0.2rem solid transparent;
+  border-radius: 0.5rem;
+  width: 55%;
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 0.2rem solid green;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+.form__input:focus:invalid {
+  border-bottom: 0.2rem solid red;
+}
+.form__label {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  display: block;
+  /* Марджины сверху и слева лучше не делать */
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  transition: all 0.7s;
+}
+.form__input:-moz-placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3rem);
+}
+.form__input:-ms-input-placeholder + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3rem);
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3rem);
+}
+.form__input-radio {
+  display: none;
+}
+.form__group-radio {
+  /* width: 39% */
+  display: inline-block;
+}
+.form__label-radio {
+  /* При наведении стрелка поменяется на руку */
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem;
+}
+.form__button-radio {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 0.3rem solid #A14F03;
+  display: block;
+  position: absolute;
+  left: 0rem;
+  top: -0.4rem;
+}
+.form__button-radio::after {
+  content: "";
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #A14F03;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.2s all;
+}
+.form__input-radio:checked ~ .form__label-radio .form__button-radio::after {
+  opacity: 1;
 }
 
 .row {
-  min-width: 114rem;
+  max-width: 114rem;
   margin: 0 auto;
 }
 .row:not(:last-child) {
@@ -593,6 +808,41 @@ body {
   text-align: center;
 }
 
+.footer {
+  padding: 8rem;
+  background: #333333;
+}
+.footer__logo {
+  width: 12rem;
+}
+.footer__list {
+  /* убрать точки */
+  list-style: none;
+  text-align: center;
+}
+.footer__item {
+  display: inline-block;
+}
+.footer__item:not(:last-child) {
+  margin-right: 5rem;
+}
+.footer__link:link, .footer__link:visited {
+  color: #777777;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  /* Эфеекты не применимы к inline-элементам, поэтому делаем линки inline-block */
+  display: inline-block;
+  transition: all 0.3s;
+}
+.footer__link:hover {
+  transform: rotate(5deg) scale(1.2);
+  color: #A14F03;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
 .section-about {
   padding-top: 8rem;
 }
@@ -612,5 +862,11 @@ body {
 }
 
 .section-feedBack {
-  padding-top: 8rem;
+  padding: 8rem 0rem;
+  position: relative;
+}
+
+.section-book {
+  padding: 10rem;
+  background: linear-gradient(90deg, #BA8554, #000000);
 }/*# sourceMappingURL=style.css.map */
