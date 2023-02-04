@@ -11,6 +11,12 @@
 /* Стили ссылок */
 /* clearfix для float */
 /* Grid */
+/* Создаем миксин с медиаправилом. В аргументе миксина указываются несколько брекпоинтов (названия произвольные):
+ *  - phone
+ *  - tab-port
+ *  - tab-land
+ *  - big-screen
+ *       */
 /* Анимация перемещения слева направо */
 @-webkit-keyframes LeftToRight {
   0% {
@@ -142,6 +148,35 @@
 
 html {
   font-size: 62.5%;
+  /* Поскольку используем max-width, то медиаправила записываются от большего разрешения к меньшему и в конце пишется правило под min-width */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 30%;
+  }
+}
+@media (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
 }
 
 body {
@@ -152,7 +187,6 @@ body {
 
 .container {
   background-color: #f7f7f7;
-  width: 114rem;
   position: relative;
   /* z-index подобран экспериментальным путем, иначе не работает анимация. По идее, он должен быть -3, чтобы не перекрывать видео и градиент для видео */
   z-index: 0;
@@ -185,6 +219,22 @@ body {
           animation-delay: 1;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .title-first__main {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 900px) {
+  .title-first__main {
+    font-size: 3.6rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 0;
+  }
 }
 .title-first__secondary {
   display: block;
@@ -203,6 +253,22 @@ body {
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
   margin-bottom: 5rem;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .title-first__secondary {
+    font-size: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .title-first__secondary {
+    font-size: 3.2rem;
+    letter-spacing: 0.2rem;
+  }
 }
 
 .title-secondary {
@@ -218,6 +284,20 @@ body {
   transition: all 0.5s;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .title-secondary {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 900px) {
+  .title-secondary {
+    letter-spacing: 0.6rem;
+  }
 }
 .title-secondary:hover {
   transform: skewY(2deg) skewX(15deg) scale(1.1);
@@ -232,6 +312,13 @@ body {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-weight: 700;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .title-third {
+    font-size: 1.8rem;
+  }
 }
 
 .paragraph {
@@ -239,6 +326,13 @@ body {
   letter-spacing: 0.2rem;
   line-height: 140%;
   font-weight: 400;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .paragraph {
+    font-size: 1.5rem;
+  }
 }
 
 /* Заголовок h2-move */
@@ -285,10 +379,24 @@ body {
 
 .margin-bottom-50px {
   margin-bottom: 5rem;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .margin-bottom-50px {
+    margin-bottom: 7rem;
+  }
 }
 
 .margin-bottom-80px {
   margin-bottom: 8rem;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .margin-bottom-80px {
+    margin-bottom: 5rem;
+  }
 }
 
 .btn {
@@ -307,6 +415,21 @@ body {
   transition: all 0.3s;
   position: relative;
   border: none;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .btn, .btn:link, .btn:visited {
+    font-size: 1.8rem;
+    padding: 1.5rem 2.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .btn, .btn:link, .btn:visited {
+    padding: 2rem 5rem;
+  }
 }
 .btn:hover {
   transform: translateY(-0.4rem);
@@ -429,6 +552,13 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .card-tour {
+    height: auto;
+  }
 }
 .card-tour__side {
   height: 50rem;
@@ -444,13 +574,41 @@ body {
   box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   overflow: hidden;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .card-tour__side {
+    height: auto;
+    position: relative;
+    padding-bottom: 13rem;
+  }
 }
 .card-tour__side_back {
   background: linear-gradient(156.85deg, #BA8554 3.65%, #A14F03 100%);
   transform: rotateY(180deg);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .card-tour__side_back {
+    transform: rotate(0deg);
+    padding: 5rem;
+    padding-top: 12rem;
+    margin-top: -11rem;
+    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+  }
 }
 .card-tour:hover .card-tour__side_front {
   transform: rotateY(-180deg);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .card-tour:hover .card-tour__side_front {
+    transform: rotate(0deg);
+  }
 }
 .card-tour:hover .card-tour__side_back {
   transform: rotateY(0deg);
@@ -461,6 +619,8 @@ body {
   height: 21rem;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .card-tour__img_1 {
   background: #BA8554 url(../img/card-1.jpg) center/cover no-repeat;
@@ -471,6 +631,11 @@ body {
 .card-tour__img_3 {
   background: #BA8554 url(../img/card-3.jpg) center/cover no-repeat;
 }
+@media (max-width: 900px) {
+  .card-tour__img {
+    height: 30rem;
+  }
+}
 .card-tour__title {
   font-size: 2.8rem;
   letter-spacing: 0.2rem;
@@ -480,6 +645,14 @@ body {
   position: absolute;
   top: 17rem;
   right: 0;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .card-tour__title {
+    top: 25rem;
+    font-size: 3.8rem;
+  }
 }
 .card-tour__span {
   background: linear-gradient(90deg, #BA8554, #A14F03);
@@ -491,6 +664,13 @@ body {
   right: 0;
   padding-bottom: 1rem;
   padding-top: 0;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .card-tour__span_2 {
+    top: 4.5rem;
+  }
 }
 .card-tour__descr ul {
   list-style: none;
@@ -505,15 +685,40 @@ body {
   letter-spacing: 0.2rem;
   color: #777777;
   border-bottom: 1px solid #777777;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .card-tour__descr ul li:not(:last-child) {
   margin-bottom: 2rem;
+}
+@media (max-width: 1240px) {
+  .card-tour__descr ul li {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .card-tour__descr ul li {
+    font-size: 2rem;
+  }
 }
 .card-tour__backSide-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .card-tour__backSide-box {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+    text-align: center;
+  }
 }
 .card-tour__text {
   margin-bottom: 8rem;
@@ -538,9 +743,25 @@ body {
   margin: 0 auto;
   padding: 6rem;
   transform: skewX(330deg);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .feedBack-card {
+    transform: skewX(350deg);
+    padding: 3rem;
+  }
 }
 .feedBack-card > * {
   transform: skewX(-330deg);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .feedBack-card > * {
+    transform: skewX(-350deg);
+    text-align: center;
+  }
 }
 .feedBack-card__img {
   width: 15rem;
@@ -553,6 +774,16 @@ body {
   margin-right: 4rem;
   overflow: hidden;
   position: relative;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .feedBack-card__img {
+    /* Отменяем float-позиционирование */
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
 }
 .feedBack-card__img img {
   height: 100%;
@@ -609,19 +840,55 @@ body {
   box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   overflow: hidden;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .book {
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 507%, rgba(186, 133, 84, 0.8) 57.1%, rgba(161, 79, 3, 0.9) 100%), url(../img/bg-form.jpg) center/cover no-repeat;
+  }
 }
 
 .form {
-  width: 65%;
+  width: 70%;
   padding-top: 5rem;
   padding-left: 5rem;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
   /* Внутренняя точка появится когда radiobutton будет выбран */
+}
+@media (max-width: 900px) {
+  .form {
+    width: 100%;
+    padding-top: 3rem;
+    padding-left: 0rem;
+  }
 }
 .form__group:not(:last-child) {
   margin-bottom: 3rem;
 }
 .form__group:nth-child(4) {
   margin-bottom: 4rem;
+}
+@media (max-width: 1240px) {
+  .form__group:not(:last-child) {
+    margin-bottom: 0rem;
+  }
+  .form__group:nth-child(4) {
+    margin-bottom: 2.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .form__group:not(:last-child) {
+    padding-left: 3rem;
+  }
+  .form__group:nth-child(5) {
+    text-align: center;
+  }
 }
 .form__input {
   font-size: 1.6rem;
@@ -634,6 +901,14 @@ body {
   border-bottom: 0.2rem solid transparent;
   border-radius: 0.5rem;
   width: 55%;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .form__input {
+    width: 90%;
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+  }
 }
 .form__input:focus {
   outline: none;
@@ -672,8 +947,20 @@ body {
   display: none;
 }
 .form__group-radio {
-  /* width: 39% */
   display: inline-block;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+.form__group-radio:not(:last-child) {
+  margin-right: 2rem;
+}
+@media (max-width: 1240px) {
+  .form__group-radio {
+    display: block;
+  }
+  .form__group-radio:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }
 .form__label-radio {
   /* При наведении стрелка поменяется на руку */
@@ -731,6 +1018,13 @@ body {
   z-index: 200;
   text-align: center;
   cursor: pointer;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .navigation__button {
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+  }
 }
 .navigation__background {
   width: 6rem;
@@ -793,14 +1087,14 @@ body {
 }
 .navigation__icon {
   position: relative;
-  margin-top: 37px;
+  margin-top: 3.7rem;
   /* Отрисовка средней полоски и размеры для верхней и нижней */
   /* Отрисовка верхней полоски */
   /* Отрисовка нижней полоски */
 }
 .navigation__icon, .navigation__icon::after, .navigation__icon::before {
-  width: 30px;
-  height: 2px;
+  width: 3rem;
+  height: 0.2rem;
   background: #000000;
   display: inline-block;
 }
@@ -811,16 +1105,16 @@ body {
   transition: all 0.2s;
 }
 .navigation__icon::before {
-  top: -8px;
+  top: -0.8rem;
 }
 .navigation__icon::after {
-  top: 8px;
+  top: 0.8rem;
 }
 .navigation__button:hover .navigation__icon::before {
-  top: -10px;
+  top: -1rem;
 }
 .navigation__button:hover .navigation__icon::after {
-  top: 10px;
+  top: 1rem;
 }
 .navigation__toggle:checked + .navigation__button .navigation__icon {
   background: transparent;
@@ -837,68 +1131,203 @@ body {
 .row {
   max-width: 114rem;
   margin: 0 auto;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .row:not(:last-child) {
   margin-bottom: 8rem;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .row:not(:last-child) {
+    margin-bottom: 4rem;
+  }
 }
 .row::after {
   content: "";
   display: table;
   clear: both;
 }
+@media (max-width: 1240px) {
+  .row {
+    max-width: 90.1rem;
+  }
+}
+@media (max-width: 900px) {
+  .row {
+    max-width: 60rem;
+  }
+}
 
 .col-1-of-2 {
   /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
   width: calc(1 * ((100% - (2 - 1) * 6rem) / 2) + (1 - 1) * 6rem);
   float: left;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .col-1-of-2:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 1240px) {
+  .col-1-of-2 {
+    width: calc(1 * ((100% - (2 - 1) * 2rem) / 2) + (1 - 1) * 2rem);
+  }
+  .col-1-of-2:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .col-1-of-2 {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 4rem;
+  }
 }
 
 .col-1-of-3 {
   /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
   width: calc(1 * ((100% - (3 - 1) * 6rem) / 3) + (1 - 1) * 6rem);
   float: left;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .col-1-of-3:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 1240px) {
+  .col-1-of-3 {
+    width: calc(1 * ((100% - (3 - 1) * 2rem) / 3) + (1 - 1) * 2rem);
+  }
+  .col-1-of-3:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .col-1-of-3 {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 4rem;
+  }
 }
 
 .col-2-of-3 {
   /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
   width: calc(2 * ((100% - (3 - 1) * 6rem) / 3) + (2 - 1) * 6rem);
   float: left;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .col-2-of-3:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 1240px) {
+  .col-2-of-3 {
+    width: calc(2 * ((100% - (3 - 1) * 2rem) / 3) + (2 - 1) * 2rem);
+  }
+  .col-2-of-3:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .col-2-of-3 {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 4rem;
+  }
 }
 
 .col-1-of-4 {
   /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
   width: calc(1 * ((100% - (4 - 1) * 6rem) / 4) + (1 - 1) * 6rem);
   float: left;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .col-1-of-4:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 1240px) {
+  .col-1-of-4 {
+    width: calc(1 * ((100% - (4 - 1) * 2rem) / 4) + (1 - 1) * 2rem);
+  }
+  .col-1-of-4:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .col-1-of-4 {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 4rem;
+  }
 }
 
 .col-2-of-4 {
   /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
   width: calc(2 * ((100% - (4 - 1) * 6rem) / 4) + (2 - 1) * 6rem);
   float: left;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .col-2-of-4:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 1240px) {
+  .col-2-of-4 {
+    width: calc(2 * ((100% - (4 - 1) * 2rem) / 4) + (2 - 1) * 2rem);
+  }
+  .col-2-of-4:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .col-2-of-4 {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 4rem;
+  }
 }
 
 .col-3-of-4 {
   /* формула: кол-во спаренных колонок * ширина одной колонки + кол-во промежутков*/
   width: calc(3 * ((100% - (4 - 1) * 6rem) / 4) + (3 - 1) * 6rem);
   float: left;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .col-3-of-4:not(:last-child) {
   margin-right: 6rem;
+}
+@media (max-width: 1240px) {
+  .col-3-of-4 {
+    width: calc(3 * ((100% - (4 - 1) * 2rem) / 4) + (3 - 1) * 2rem);
+  }
+  .col-3-of-4:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  .col-3-of-4 {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 4rem;
+  }
 }
 
 .header {
@@ -931,6 +1360,13 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .header__box {
+    top: 50%;
+  }
 }
 
 .footer {
@@ -947,9 +1383,24 @@ body {
 }
 .footer__item {
   display: inline-block;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .footer__item:not(:last-child) {
   margin-right: 5rem;
+}
+@media (max-width: 1240px) {
+  .footer__item:not(:last-child) {
+    margin-right: 1.6rem;
+  }
+}
+@media (max-width: 900px) {
+  .footer__item {
+    margin: 0;
+    padding: 2rem;
+  }
 }
 .footer__link:link, .footer__link:visited {
   color: #777777;
@@ -970,15 +1421,37 @@ body {
 
 .section-about {
   padding-top: 8rem;
+  margin-bottom: 20rem;
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 1240px) {
+  .section-about {
+    margin-bottom: 13rem;
+  }
+}
+@media (max-width: 900px) {
+  .section-about {
+    margin-bottom: 40rem;
+  }
 }
 
 .section-adventure {
   padding: 21rem 0;
   background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(0, 0, 0, 0.7) 99.94%), url(../img/section-adventure.jpg) center/cover no-repeat;
   transform: skewY(3deg);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
 }
 .section-adventure > * {
   transform: skewY(-3deg);
+}
+@media (max-width: 1240px) {
+  .section-adventure {
+    padding: 15rem 0;
+  }
 }
 
 .section-tour {
@@ -994,4 +1467,11 @@ body {
 .section-book {
   padding: 10rem;
   background: linear-gradient(90deg, #BA8554, #000000);
+  /* В диапазоне от 1200px до 1800px будет применяться обычная декстопная версия без медиаправила */
+  /* Версия для больших мониторов имеет не макс., а мин. ограничение ширины */
+}
+@media (max-width: 900px) {
+  .section-book {
+    padding: 4rem;
+  }
 }/*# sourceMappingURL=style.css.map */
